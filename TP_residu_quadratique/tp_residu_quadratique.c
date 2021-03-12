@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "tp_euclide_bin.h"
+#include "tp_residu_quadratique.h"
 
 int phi(int n){
 	int cpt=0;
