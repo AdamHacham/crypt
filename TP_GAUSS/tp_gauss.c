@@ -7,7 +7,7 @@
 void GaussAffiche(GaussType x,int cr)
 {
   // on affiche a - b V5 si b est négatif
-  printf("(%d %s %d V5) / %d%s",x.a,x.b<0?"-":"+",x.b<0?-x.b:x.b,x.d,cr?"\n":" ");
+  printf("(%ld %s %ld V5) / %ld%s",x.a,x.b<0?"-":"+",x.b<0?-x.b:x.b,x.d,cr?"\n":" \t | \t ");
 }
 
 // Algorithme d’Euclide
@@ -71,20 +71,21 @@ void GaussDivise(GaussType *q,GaussType x,GaussType y){
   GaussMul(q,x,i);
 }
 
-GaussType GaussPuiss(GaussType x,unsigned int n){
+void GaussPuiss(GaussType *r, GaussType x,unsigned int n){
   GaussType y = x;
   GaussType produit = {1,0,1};
   unsigned int expo = n;
 
   while(expo != 0){
     if(expo%2 == 1) {
-      GaussMul(&produit,produit,y);
-      if(expo==1) return produit;  
+      GaussMul(&produit,produit,y);      
+      r->a = produit.a;
+      r->b = produit.b;
+      r->d = produit.d;
     }
     GaussMul(&y,y,y);
     expo = expo/2;
   }
- return produit;  
 }
 
 /*

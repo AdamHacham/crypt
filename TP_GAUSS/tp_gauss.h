@@ -17,6 +17,6 @@ void GaussOpp(GaussType *o,GaussType x);
 void GaussInv(GaussType *i,GaussType x);
 void GaussSoustrait(GaussType *s,GaussType x,GaussType y);
 void GaussDivise(GaussType *q,GaussType x,GaussType y);
-GaussType GaussPuiss(GaussType x,unsigned int n);
+void GaussPuiss(GaussType *r, GaussType x,unsigned int n);
 
 #endif
